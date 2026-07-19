@@ -1,0 +1,65 @@
+import numpy as np
+
+#-- grace marks
+marks=np.array([75,80,65,90,55])
+new_marks=marks+5
+print(new_marks)
+
+#-- creating 2D
+student_data = np.array([
+    [85, 4, 70],
+    [92, 5, 82],
+    [60, 2, 45],
+    [75, 3, 60]
+])
+print(student_data)
+print(student_data.shape)
+
+
+#-- array properties
+attendance = np.array([85, 92, 60, 75, 55])
+print("Dimensions:", attendance.ndim)
+print("Shape:", attendance.shape)
+print("Size:", attendance.size)
+print("Data Type:", attendance.dtype)
+
+
+#-- random data
+marks = np.random.randint(40, 101, size=10)  # Random integers between 40 and 100
+study_hours = np.random.randint(1, 9, size=10) # Random study hours between 1 and 8
+print(marks)
+print(study_hours)
+
+
+#-- slicing 2D
+student_data = np.array([
+    [85, 4, 70],
+    [92, 5, 82],
+    [60, 2, 45]
+])
+
+print(student_data[:, 0])  # all attendance
+print(student_data[:, 1])  # all study hours
+
+
+#-- print(np.__version__)
+marks = np.array([75, 80, 65, 90, 55])
+print(marks[:4]) 
+
+
+#-- creating 1D
+marks=np.array([75,80,65,90,55])
+print(marks)
+print(type(marks))
+print(marks.ndim)
+print(marks.shape)
+
+
+#-- create ML input matrix
+attendance=np.array([85,93,60,75,55])
+study_hours=np.array([4,5,2,3,1])
+previous_marks=np.array([70,82,45,60,40])
+x=np.column_stack((attendance,study_hours,previous_marks))
+y=np.array([75,88,49,66,42])
+print("Features x:",x)
+print("Target y:",y)
