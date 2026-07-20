@@ -1,0 +1,45 @@
+import pandas as pd
+df=pd.read_csv('std_data.csv')
+
+#-- Average Attendance by course
+print("Attendance by Course")
+attendance_avg = df.groupby("Course")["Attendance"].mean()
+print(attendance_avg)
+
+# Average marks by gender
+gender_avg = df.groupby("Gender")["FinalMarks"].mean()
+print(gender_avg)
+
+# Average attendance by gender
+gender_attendance = df.groupby("Gender")["Attendance"].mean()
+print(gender_attendance)
+
+#-- Find lowest performing course
+print("Course with lowest average marks")
+course_avg = df.groupby("Course")["FinalMarks"].mean()
+low_course = course_avg.idxmin()
+low_average = course_avg.min()
+print("Lowest Course:", low_course)
+print("Average Marks:", low_average)
+
+#-- Course summary
+course_summary = df.groupby("Course").agg({
+"Student ID": "count",
+"Attendance": "mean",
+"FinalMarks": "mean"
+}).reset_index()
+
+# Save report
+course_summary.to_csv("course_summary_report.csv", index=False)
+print("Report saved successfully")
+
+
+#-- Export Multiple Reports
+# Report 1: Course summary
+course_summary.to_csv("course_summary_report.csv", index=False)
+# Report 2: Gender summary
+gender_summary = df.groupby("Gender")["FinalMarks"].mean()
+gender_summary.to_csv("gender_summary_report.csv")
+# Report 3: Pass/Fail count
+result_count = df["Result"].value_counts()
+result_count.to_csv("result_count_report.csv")
