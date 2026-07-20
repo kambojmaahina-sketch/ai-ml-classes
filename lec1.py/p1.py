@@ -14,5 +14,6 @@ print(df.columns)
 
 print("Dataset Information:")
 df.info()
+
 print("Basic Statistics:")
 print(df.describe())
