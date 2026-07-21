@@ -1,6 +1,13 @@
 import pandas as pd
 df=pd.read_csv('std_data.csv')
 
+#-- Percentage Distribution
+print("Percentage of Male and Female students")
+gender_percent = df["Gender"].value_counts(
+    normalize=True
+) * 100
+print(gender_percent)
+
 #-- Average Attendance by course
 print("Attendance by Course")
 attendance_avg = df.groupby("Course")["Attendance"].mean()

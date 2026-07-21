@@ -1,7 +1,7 @@
 import pandas as pd
 
 df=pd.read_csv('std_data.csv')
-'''
+
 print(df.head())
 
 print(f"Number of students {len(df)}")
@@ -15,13 +15,7 @@ print(df["FinalMarks"].mean())
 print("Average Attendance:")
 print(df["Attendance"].mean())
 
-#-- Count Categories With value_counts()
-# Count pass and fail students
-print(df["Result"].value_counts())
-# Count male and female students
-print(df["Gender"].value_counts())
-
-# Count
+#-- Count Categories With value_counts(),
 print("Count pass and fail students")
 print(df["Result"].value_counts())
 
@@ -52,7 +46,7 @@ course_summary = df.groupby("Course")["FinalMarks"].agg([
     "min"
 ])
 print(course_summary)
-'''
+
 #-- Multiple Columns In Summary
 print("Analyze marks and attendance together")
 summary = df.groupby("Course").agg({
@@ -73,7 +67,7 @@ course_result = df.groupby([
 print(course_result)
 
 #-- Make group output cleaner
-print("Convert groupby result into normal table")
+print("Groupby result into normal table")
 course_result = df.groupby([
     "Course",
     "Result"
@@ -90,7 +84,6 @@ pivot = pd.pivot_table(
     aggfunc="count",
     fill_value=0
 )
-
 print(pivot)
 
 #-- Find top performing course
@@ -110,5 +103,3 @@ total_by_course = df.groupby("Course")["Student ID"].count()
 pass_by_course = pass_data.groupby("Course")["Student ID"].count()
 pass_percent = (pass_by_course / total_by_course) * 100
 print(pass_percent)
-
-
