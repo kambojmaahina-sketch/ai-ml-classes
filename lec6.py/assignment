@@ -1,0 +1,18 @@
+import pandas as pd
+df = pd.read_csv("std_dirty_data.csv")
+
+#-- fill missing finalmarks with average final marks
+df["FinalMarks"]=df["FinalMarks"].fillna(df["FinalMarks"].mean())
+print(df["FinalMarks"])
+
+#-- Missing result with not available 
+df["Result"]=df["Result"].fillna("not available")
+print(df["Result"])
+
+#-- remove rows only if final marks are missing
+clean_df=df.dropna(subset=["FinalMarks"])
+print(clean_df)
+
+#-- Standardize text values gender
+df["Gender"]=df["Gender"].str.title()
+print(df["Gender"].value_counts())

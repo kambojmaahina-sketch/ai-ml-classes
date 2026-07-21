@@ -1,0 +1,16 @@
+Student ID,Student name,Gender,Course,Attendance,StudyHours,PrevMarks,Assignmnet score,FinalMarks,Result
+1,Amit,M,BCA,84,3,52,,21,Fail
+2,Neha,F,BSC,100,7,,10,42,Pass
+3,Rohit,M,BCA,94,,53,12,35,Fail
+4,Priya,F,BCOM,,6,,,50,Pass
+5,Karan,M,BSC,67,3,76,18,42,Pass
+6,Simran,F,BCA,84,8,,,93,Pass
+7,Arjun,M,BSC,,4,92,22,71,Pass
+8,Meena,M,BCA,80,5,82,10,98,Pass
+9,Vikram,F,BCOM,70,7,54,23,,Pass
+10,Divya,M,BSC,,,71,,61,Pass
+11,Suresh,F,BCA,98,2,88,13,54,Pass
+12,Anjali,M,BSC,84,4,71,23,74,Pass
+13,Ravi,F,BCA,,4,,25,63,Pass
+14,Pooja,M,BCOM,69,8,100,17,50,Pass
+15,Mohit,M,BSC,73,7,95,13,63,Pass

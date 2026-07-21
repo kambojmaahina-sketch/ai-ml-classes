@@ -1,0 +1,54 @@
+import pandas as pd
+df = pd.read_csv("std_dirty_data.csv")
+print(df.head())
+
+print("Rows and Columns:")
+print(df.shape)
+
+print("Column Names:")
+print(df.columns)
+
+print("Dataset Info:")
+print(df.info())
+
+#-- missing values
+print("Missing Values:")
+print(df.isnull().sum())
+
+#-- missng value in each column
+print("Total Missing Values:")
+print(df.isnull().sum().sum())
+
+#-- show all the rows with missing values
+missing_values_rows = df[df.isnull().any(axis=1)] #-- axis=1 checks row wise
+print("Rows with Missing Values:")
+print(missing_values_rows)
+print(df["Attendance"])
+
+
+#-- fill missing attendance with average attendance
+att_avg=df["Attendance"].mean()
+df["Attendance"]=df["Attendance"].fillna(att_avg)
+print(df["Attendance"])
+
+#-- Missing gender with unknown 
+df["Gender"]=df["Gender"].fillna("Unknown")
+print(df["Gender"])
+
+
+#-- remove rows containing missing value
+clean_df=df.dropna()
+print(df)
+print(clean_df)
+
+#-- Count duplicate rows
+print(df.duplicated().sum())
+
+#-- Show duplicate rows
+duplicates = df[df.duplicated()]
+print(duplicates)
+'''
+without_duplicates = df.drop_duplicates()
+print(df)
+print(without_duplicates)
+'''
