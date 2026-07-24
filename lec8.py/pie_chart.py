@@ -13,4 +13,5 @@ plt.pie(
     startangle=90
 )
 plt.title("Pass vs Fail Percentage")
+#plt.savefig("student_marks_chart.png", dpi=300)    #saving chart as image
 plt.show()

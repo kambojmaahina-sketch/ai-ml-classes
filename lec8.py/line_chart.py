@@ -11,7 +11,7 @@ plt.ylabel("Y Axis Label")
 plt.grid(True)
 plt.show()
 '''
-'''
+
 #--Line chart student marks
 plt.figure(figsize=(8, 5))
 plt.plot(
@@ -24,8 +24,9 @@ plt.xlabel("Student")
 plt.ylabel("Final Marks")
 plt.xticks(rotation=45)
 plt.grid(True)
+#plt.savefig("student_marks_chart.png", dpi=300)    #saving chart as image
 plt.show()
-'''
+
 
 
 #-- assignment-- line chart for Attendance by StudentName.

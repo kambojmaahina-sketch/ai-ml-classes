@@ -12,4 +12,5 @@ plt.scatter(
 plt.title("Study Hours vs FinalMarks")
 plt.xlabel("Study Hours")
 plt.ylabel("Final Marks")
+#plt.savefig("student_marks_chart.png", dpi=300)    #saving chart as image
 plt.show()
