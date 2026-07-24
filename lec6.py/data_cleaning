@@ -47,6 +47,7 @@ print(df.duplicated().sum())
 #-- Show duplicate rows
 duplicates = df[df.duplicated()]
 print(duplicates)
+
 '''
 without_duplicates = df.drop_duplicates()
 print(df)
